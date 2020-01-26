@@ -20,3 +20,6 @@ sudo -u hadoop mv "${HOME}/zookeeper-current/bin/zkEnv.sh" /data/conf/zookeeper-
 command='/${ZOO_LOG_DIR}/i ZOO_LOG_DIR='"${HOME}"'/cluster-data/zk/logs'
 sudo -u hadoop sed -i "${command}" /data/conf/zookeeper-conf/zkEnv.sh
 sudo -u hadoop ln -snf ../conf/zkEnv.sh "${HOME}/zookeeper-current/bin/"
+
+zookeeper_bin_path="/home/hadoop/zookeeper-current/bin"
+sudo -u hadoop echo 'export PATH="'"${zookeeper_bin_path}"':${PATH}"' >> /home/hadoop/.bash_profile
